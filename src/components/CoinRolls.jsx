@@ -2,33 +2,10 @@ import React, { useState } from "react";
 import Input from "./Input"; // Ensure this component accepts props correctly
 import Hamburger from "hamburger-react";
 
-export default function CoinsRolls() {
+export default function CoinsRolls({ amounts, setAmounts, totalCoinRolls }) {
   const [isOpen, setOpen] = useState(false);
-  const [amounts, setAmounts] = useState({
-    zeroPoint01: "",
-    zeroPoint02: "",
-    zeroPoint05: "",
-    zeroPoint10: "",
-    zeroPoint20: "",
-    zeroPoint50: "",
-    one: "",
-    two: "",
-  });
 
   // Calculate total amount based on predefined values and user input quantities
-  const calculateTotal = () => {
-    const total =
-      amounts.zeroPoint01 * 0.01 +
-      amounts.zeroPoint02 * 0.02 +
-      amounts.zeroPoint05 * 0.05 +
-      amounts.zeroPoint10 * 0.1 +
-      amounts.zeroPoint20 * 0.2 +
-      amounts.zeroPoint50 * 0.5 +
-      amounts.one * 1.0 +
-      amounts.two * 2.0;
-
-    return total.toFixed(2); // Format to 2 decimal places
-  };
 
   const handleChange = (e, key) => {
     setAmounts({
@@ -41,7 +18,7 @@ export default function CoinsRolls() {
     <>
       <div className="flex items-center justify-between mx-5">
         <h2 className="text-center">Rollen</h2>
-        <h2>GESAMT BETRAG: {calculateTotal()} €</h2>
+        <h2>GESAMT BETRAG: {totalCoinRolls()} €</h2>
         <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
       {isOpen && (
