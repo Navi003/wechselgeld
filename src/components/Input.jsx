@@ -15,6 +15,7 @@ const Input = ({ onChange, className, ...props }, ref) => {
         ease-in-out 
         ${className} 
       `}
+      inputmode="numeric"
       type="number"
       onChange={onChange}
       style={{ textAlign: "center" }} //
