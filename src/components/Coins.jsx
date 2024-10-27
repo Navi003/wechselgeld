@@ -24,56 +24,49 @@ export default function Coins({ amounts, setAmounts, totalCoins }) {
       {isOpen && (
         <div className="flex flex-wrap justify-center gap-3 p-4 bg-blue-500">
           <Input
-            type="text" // Changed to text for better input validation
+            // Changed to number for better input validation
             className="w-20 p-4 rounded-md"
             placeholder="2€"
             value={amounts.twoEuro}
             onChange={(e) => handleChange(e, "twoEuro")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="1€"
             value={amounts.oneEuro}
             onChange={(e) => handleChange(e, "oneEuro")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="0.50€"
             value={amounts.fiftyCent}
             onChange={(e) => handleChange(e, "fiftyCent")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="0.20€"
             value={amounts.twentyCent}
             onChange={(e) => handleChange(e, "twentyCent")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="0.10€"
             value={amounts.tenCent}
             onChange={(e) => handleChange(e, "tenCent")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="0.05€"
             value={amounts.fiveCent}
             onChange={(e) => handleChange(e, "fiveCent")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="0.02€"
             value={amounts.twoCent}
             onChange={(e) => handleChange(e, "twoCent")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="0.01€"
             value={amounts.oneCent}

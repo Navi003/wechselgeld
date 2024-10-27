@@ -24,60 +24,54 @@ export default function CoinsRolls({ amounts, setAmounts, totalCoinRolls }) {
       {isOpen && (
         <div className="flex flex-wrap justify-center gap-3 p-4 bg-purple-400">
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
-            placeholder="0.01€"
-            value={amounts.zeroPoint01}
-            onChange={(e) => handleChange(e, "zeroPoint01")}
+            placeholder="2.00€"
+            value={amounts.two}
+            onChange={(e) => handleChange(e, "two")}
           />
           <Input
-            type="text"
-            className="w-20 p-4 rounded-md"
-            placeholder="0.02€"
-            value={amounts.zeroPoint02}
-            onChange={(e) => handleChange(e, "zeroPoint02")}
-          />
-          <Input
-            type="text"
-            className="w-20 p-4 rounded-md"
-            placeholder="0.05€"
-            value={amounts.zeroPoint05}
-            onChange={(e) => handleChange(e, "zeroPoint05")}
-          />
-          <Input
-            type="text"
-            className="w-20 p-4 rounded-md"
-            placeholder="0.10€"
-            value={amounts.zeroPoint10}
-            onChange={(e) => handleChange(e, "zeroPoint10")}
-          />
-          <Input
-            type="text"
-            className="w-20 p-4 rounded-md"
-            placeholder="0.20€"
-            value={amounts.zeroPoint20}
-            onChange={(e) => handleChange(e, "zeroPoint20")}
-          />
-          <Input
-            type="text"
-            className="w-20 p-4 rounded-md"
-            placeholder="0.50€"
-            value={amounts.zeroPoint50}
-            onChange={(e) => handleChange(e, "zeroPoint50")}
-          />
-          <Input
-            type="text"
             className="w-20 p-4 rounded-md"
             placeholder="1.00€"
             value={amounts.one}
             onChange={(e) => handleChange(e, "one")}
           />
           <Input
-            type="text"
             className="w-20 p-4 rounded-md"
-            placeholder="2.00€"
-            value={amounts.two}
-            onChange={(e) => handleChange(e, "two")}
+            placeholder="0.50€"
+            value={amounts.zeroPoint50}
+            onChange={(e) => handleChange(e, "zeroPoint50")}
+          />
+          <Input
+            className="w-20 p-4 rounded-md"
+            placeholder="0.20€"
+            value={amounts.zeroPoint20}
+            onChange={(e) => handleChange(e, "zeroPoint20")}
+          />
+          <Input
+            className="w-20 p-4 rounded-md"
+            placeholder="0.10€"
+            value={amounts.zeroPoint10}
+            onChange={(e) => handleChange(e, "zeroPoint10")}
+          />
+
+          <Input
+            className="w-20 p-4 rounded-md"
+            placeholder="0.05€"
+            value={amounts.zeroPoint05}
+            onChange={(e) => handleChange(e, "zeroPoint05")}
+          />
+
+          <Input
+            className="w-20 p-4 rounded-md"
+            placeholder="0.02€"
+            value={amounts.zeroPoint02}
+            onChange={(e) => handleChange(e, "zeroPoint02")}
+          />
+          <Input
+            className="w-20 p-4 rounded-md"
+            placeholder="0.01€"
+            value={amounts.zeroPoint01}
+            onChange={(e) => handleChange(e, "zeroPoint01")}
           />
         </div>
       )}

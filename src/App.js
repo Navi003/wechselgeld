@@ -40,14 +40,14 @@ function App() {
   // Calculate total amount based on predefined values and user input quantities
   const calculateTotalCoinRolls = () => {
     const total =
-      coinRollsAmounts.zeroPoint01 * 0.01 +
-      coinRollsAmounts.zeroPoint02 * 0.02 +
-      coinRollsAmounts.zeroPoint05 * 0.05 +
-      coinRollsAmounts.zeroPoint10 * 0.1 +
-      coinRollsAmounts.zeroPoint20 * 0.2 +
-      coinRollsAmounts.zeroPoint50 * 0.5 +
-      coinRollsAmounts.one * 1.0 +
-      coinRollsAmounts.two * 2.0;
+      coinRollsAmounts.zeroPoint01 * 0.5 +
+      coinRollsAmounts.zeroPoint02 * 1 +
+      coinRollsAmounts.zeroPoint05 * 2.5 +
+      coinRollsAmounts.zeroPoint10 * 4 +
+      coinRollsAmounts.zeroPoint20 * 8 +
+      coinRollsAmounts.zeroPoint50 * 20 +
+      coinRollsAmounts.one * 25 +
+      coinRollsAmounts.two * 50;
 
     return total.toFixed(2); // Format to 2 decimal places
   };
