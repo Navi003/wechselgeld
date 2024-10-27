@@ -88,6 +88,7 @@ function App() {
     const grandTotalValue = Number(total).toFixed(2);
 
     setGrandTotal(grandTotalValue);
+    // eslint-disable-next-line
   }, [coinRollsAmounts, coinAmounts, notesAmounts]);
 
   return (
