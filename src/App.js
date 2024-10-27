@@ -92,26 +92,24 @@ function App() {
 
   return (
     <div>
-      <TotalProvider>
-        <div className="p-8 text-xl font-bold text-center bg-orange-300">
-          GESAMT BETRAG :<br></br> {grandTotal}€
-        </div>
-        <Notes
-          totalNotes={calculateTotalNotes}
-          setAmounts={setNotesAmounts}
-          amounts={notesAmounts}
-        />
-        <CoinRolls
-          totalCoinRolls={calculateTotalCoinRolls}
-          amounts={coinRollsAmounts}
-          setAmounts={setCoinRollAmounts}
-        />
-        <Coins
-          totalCoins={calculateTotalCoins}
-          amounts={coinAmounts}
-          setAmounts={setCoinAmounts}
-        />
-      </TotalProvider>
+      <div className="p-8 text-xl font-bold text-center bg-orange-300">
+        GESAMT BETRAG :<br></br> {grandTotal}€
+      </div>
+      <Notes
+        totalNotes={calculateTotalNotes}
+        setAmounts={setNotesAmounts}
+        amounts={notesAmounts}
+      />
+      <CoinRolls
+        totalCoinRolls={calculateTotalCoinRolls}
+        amounts={coinRollsAmounts}
+        setAmounts={setCoinRollAmounts}
+      />
+      <Coins
+        totalCoins={calculateTotalCoins}
+        amounts={coinAmounts}
+        setAmounts={setCoinAmounts}
+      />
     </div>
   );
 }
