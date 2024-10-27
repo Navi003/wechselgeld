@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CoinRolls from "./components/CoinRolls";
 import Coins from "./components/Coins";
 import Notes from "./components/Notes";
-import { TotalProvider, useTotalContext } from "./components/TotalContext";
 
 function App() {
   const [grandTotal, setGrandTotal] = useState("");
