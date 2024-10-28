@@ -3,39 +3,45 @@ import CoinRolls from "./components/CoinRolls";
 import Coins from "./components/Coins";
 import Notes from "./components/Notes";
 
+const conRollsInitalState = {
+  zeroPoint01: "",
+  zeroPoint02: "",
+  zeroPoint05: "",
+  zeroPoint10: "",
+  zeroPoint20: "",
+  zeroPoint50: "",
+  one: "",
+  two: "",
+};
+
+const notesInitialState = {
+  twoHundred: "",
+  oneHundred: "",
+  fifty: "",
+  twenty: "",
+  ten: "",
+  five: "",
+};
+
+const coinsInitialState = {
+  twoEuro: "",
+  oneEuro: "",
+  fiftyCent: "",
+  twentyCent: "",
+  tenCent: "",
+  fiveCent: "",
+  twoCent: "",
+  oneCent: "",
+};
+
 function App() {
   const [grandTotal, setGrandTotal] = useState("");
 
-  const [coinRollsAmounts, setCoinRollAmounts] = useState({
-    zeroPoint01: "",
-    zeroPoint02: "",
-    zeroPoint05: "",
-    zeroPoint10: "",
-    zeroPoint20: "",
-    zeroPoint50: "",
-    one: "",
-    two: "",
-  });
+  const [coinRollsAmounts, setCoinRollAmounts] = useState(conRollsInitalState);
 
-  const [notesAmounts, setNotesAmounts] = useState({
-    twoHundred: "",
-    oneHundred: "",
-    fifty: "",
-    twenty: "",
-    ten: "",
-    five: "",
-  });
+  const [notesAmounts, setNotesAmounts] = useState(notesInitialState);
 
-  const [coinAmounts, setCoinAmounts] = useState({
-    twoEuro: "",
-    oneEuro: "",
-    fiftyCent: "",
-    twentyCent: "",
-    tenCent: "",
-    fiveCent: "",
-    twoCent: "",
-    oneCent: "",
-  });
+  const [coinAmounts, setCoinAmounts] = useState(coinsInitialState);
 
   // Calculate total amount based on predefined values and user input quantities
   const calculateTotalCoinRolls = () => {
@@ -90,26 +96,41 @@ function App() {
     // eslint-disable-next-line
   }, [coinRollsAmounts, coinAmounts, notesAmounts]);
 
+  const resetHandler = () => {
+    setCoinRollAmounts(conRollsInitalState);
+    setNotesAmounts(notesInitialState);
+    setCoinAmounts(coinsInitialState);
+  };
+
   return (
-    <div>
-      <div className="p-8 text-xl font-bold text-center bg-orange-300">
-        GESAMT BETRAG :<br></br> {grandTotal}€
+    <div className="flex flex-col justify-between h-screen">
+      <div>
+        <div className="p-8 text-xl font-bold text-center bg-orange-300">
+          GESAMT BETRAG :<br></br> {grandTotal}€
+        </div>
+
+        <Notes
+          totalNotes={calculateTotalNotes}
+          setAmounts={setNotesAmounts}
+          amounts={notesAmounts}
+        />
+        <CoinRolls
+          totalCoinRolls={calculateTotalCoinRolls}
+          amounts={coinRollsAmounts}
+          setAmounts={setCoinRollAmounts}
+        />
+        <Coins
+          totalCoins={calculateTotalCoins}
+          amounts={coinAmounts}
+          setAmounts={setCoinAmounts}
+        />
       </div>
-      <Notes
-        totalNotes={calculateTotalNotes}
-        setAmounts={setNotesAmounts}
-        amounts={notesAmounts}
-      />
-      <CoinRolls
-        totalCoinRolls={calculateTotalCoinRolls}
-        amounts={coinRollsAmounts}
-        setAmounts={setCoinRollAmounts}
-      />
-      <Coins
-        totalCoins={calculateTotalCoins}
-        amounts={coinAmounts}
-        setAmounts={setCoinAmounts}
-      />
+      <button
+        onClick={resetHandler}
+        className="w-full p-6 font-semibold text-red-100 transition-all bg-red-500 active:scale-[.9] "
+      >
+        Reset
+      </button>
     </div>
   );
 }
